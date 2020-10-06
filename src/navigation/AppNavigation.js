@@ -1,12 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {useSelector} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import {IntroStackScreens, HomeTabScreens} from './SoupNavigation';
 
 const AppNavigation = () => {
+  const firstOpenApp = useSelector((state) => state.firstOpenApp.firstOpenApp);
   return (
     <NavigationContainer>
-      <IntroStackScreens />
+      {firstOpenApp ? <HomeTabScreens /> : <IntroStackScreens />}
     </NavigationContainer>
   );
 };
