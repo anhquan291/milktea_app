@@ -6,10 +6,11 @@ import {Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import AppNavigation from './src/navigation';
-import {userReducer} from './src/redux/index';
+import {userReducer, firstOpenReducer} from './src/redux';
 
 const rootReducer = combineReducers({
   user: userReducer,
+  firstOpenApp: firstOpenReducer,
 });
 const store = createStore(
   rootReducer,
