@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {HEIGHT, WIDTH} from '../../../ultils/constant';
 import {MediumText} from '../../../components/text';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 export const Slides = ({
@@ -38,8 +38,10 @@ export const Slides = ({
 };
 
 Slides.propTypes = {
-  subtitle: PropTypes.string.isRequired,
-  des: PropTypes.string.isRequired,
+  subtitle: propTypes.string.isRequired,
+  des: propTypes.string.isRequired,
+  enterApp: propTypes.func.isRequired,
+  nextHandler: propTypes.func.isRequired,
 };
 const styles = StyleSheet.create({
   container: {

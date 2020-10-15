@@ -1,4 +1,7 @@
 apply plugin: "com.android.application"
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services' // <- Add this line firebase
 
 import com.android.build.OutputFile
 

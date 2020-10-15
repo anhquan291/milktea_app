@@ -4,6 +4,7 @@ import {Text, StyleSheet} from 'react-native';
 const MediumText = (props) => {
   return (
     <Text
+      onPress={props.onPress}
       allowFontScaling={false}
       selectable={props.selectable}
       style={{...styles.text, ...props.style}}>
