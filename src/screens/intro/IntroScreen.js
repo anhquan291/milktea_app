@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: HEIGHT * 0.15,
+    backgroundColor: Colors.white,
   },
   skipContainer: {
     position: 'absolute',

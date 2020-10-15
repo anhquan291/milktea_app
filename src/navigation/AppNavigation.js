@@ -1,13 +1,52 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
-import {IntroStackScreens, HomeTabScreens} from './SoupNavigation';
+import {
+  IntroStackScreens,
+  HomeTabScreens,
+  AuthStackScreens,
+} from './SoupNavigation';
+import auth from '@react-native-firebase/auth';
+import {userActions} from '../redux';
 
 const AppNavigation = () => {
+  const dispatch = useDispatch();
   const firstOpenApp = useSelector((state) => state.firstOpenApp.firstOpenApp);
+  const enterAppWithoutUser = useSelector(
+    (state) => state.withoutUser.enterAppWithoutUser,
+  );
+  const user = useSelector((state) => state.user);
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    auth().onAuthStateChanged(async function (current) {
+      console.log(current);
+      if (current && current.displayName !== null) {
+        setCurrentUser(current._user);
+        dispatch(
+          userActions.autoLogin({
+            name: current.displayName,
+            phone: current.phoneNumber,
+          }),
+        );
+      } else {
+        setCurrentUser(null);
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <NavigationContainer>
-      {firstOpenApp ? <HomeTabScreens /> : <IntroStackScreens />}
+      {!firstOpenApp ? (
+        <IntroStackScreens />
+      ) : user.user !== null ||
+        currentUser !== null ||
+        enterAppWithoutUser === true ? (
+        <HomeTabScreens />
+      ) : (
+        <AuthStackScreens />
+      )}
     </NavigationContainer>
   );
 };

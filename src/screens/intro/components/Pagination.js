@@ -4,7 +4,7 @@ import {View, StyleSheet, Animated} from 'react-native';
 import {WIDTH} from '../../../ultils/constant';
 import Colors from '../../../ultils/colors';
 //PropTypes check
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 const DOT_SIZE = 20;
 
@@ -37,8 +37,8 @@ export const Pagination = ({scrollX, slides}) => {
 };
 
 Pagination.propTypes = {
-  scrollX: PropTypes.object.isRequired,
-  slides: PropTypes.array.isRequired,
+  scrollX: propTypes.object.isRequired,
+  slides: propTypes.array.isRequired,
 };
 
 const styles = StyleSheet.create({

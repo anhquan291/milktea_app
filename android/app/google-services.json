@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "613578476320",
+    "firebase_url": "https://souptatua.firebaseio.com",
+    "project_id": "souptatua",
+    "storage_bucket": "souptatua.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613578476320:android:e00fe1df5779dbfb53e545",
+        "android_client_info": {
+          "package_name": "com.supmilktea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613578476320-h473mce9lp4549nauanq9mq3l5oc1b3t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.supmilktea",
+            "certificate_hash": "7e11edfebf1f72d87a22c209b540147e8a104fdc"
+          }
+        },
+        {
+          "client_id": "613578476320-a2q2edkkefah59iq85h93b8ts4b2sdp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK3VXzXD9Df3kjlWAV8u_9hhTGDsrDFXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613578476320-a2q2edkkefah59iq85h93b8ts4b2sdp1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
