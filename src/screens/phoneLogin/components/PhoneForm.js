@@ -28,7 +28,9 @@ export const PhoneForm = () => {
   const {handleSubmit, control, errors} = useForm();
   const inputPhoneRef = useRef(null);
   useEffect(() => {
-    inputPhoneRef.current.focus();
+    Platform.OS === 'ios'
+      ? inputPhoneRef.current.focus()
+      : setTimeout(() => inputPhoneRef.current.focus(), 10);
   }, []);
   const onSubmit = async (data) => {
     const phone = data.phone;

@@ -46,7 +46,7 @@ export const OtpForm = ({phone}) => {
             style={styles.otpForm}
             pinCount={6}
             selectionColor={Colors.white}
-            autoFocusOnLoad
+            autoFocusOnLoad={true}
             codeInputFieldStyle={styles.underlineStyleBase}
             onCodeFilled={(code) => {
               verify(code);
