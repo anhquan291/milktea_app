@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "613578476320",
-    "firebase_url": "https://souptatua.firebaseio.com",
-    "project_id": "souptatua",
-    "storage_bucket": "souptatua.appspot.com"
+    "project_number": "996078712595",
+    "firebase_url": "https://souptatua-5e194.firebaseio.com",
+    "project_id": "souptatua-5e194",
+    "storage_bucket": "souptatua-5e194.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:613578476320:android:e00fe1df5779dbfb53e545",
+        "mobilesdk_app_id": "1:996078712595:android:de1e566ff953c7a2eccce6",
         "android_client_info": {
           "package_name": "com.supmilktea"
         }
       },
       "oauth_client": [
         {
-          "client_id": "613578476320-h473mce9lp4549nauanq9mq3l5oc1b3t.apps.googleusercontent.com",
+          "client_id": "996078712595-k4goivlc6c6a2ui0cro99gt45ch17u00.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.supmilktea",
@@ -23,21 +23,28 @@
           }
         },
         {
-          "client_id": "613578476320-a2q2edkkefah59iq85h93b8ts4b2sdp1.apps.googleusercontent.com",
+          "client_id": "996078712595-rt1u9gva4o0tv58g65t1h5cnaalrkg7q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCK3VXzXD9Df3kjlWAV8u_9hhTGDsrDFXg"
+          "current_key": "AIzaSyC-JxVnrltSWhTZCfNwmCGumkaf5zHML9g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "613578476320-a2q2edkkefah59iq85h93b8ts4b2sdp1.apps.googleusercontent.com",
+              "client_id": "996078712595-rt1u9gva4o0tv58g65t1h5cnaalrkg7q.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "996078712595-mer33r3usroe124qli6laa9tjacjf3a2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.supmilktea"
+              }
             }
           ]
         }

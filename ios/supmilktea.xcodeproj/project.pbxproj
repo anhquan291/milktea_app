@@ -19,12 +19,12 @@
 		78A6E6C36545A206334FA7E7 /* libPods-supmilktea-supmilkteaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C7288EA17046BEE0087130 /* libPods-supmilktea-supmilkteaTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A87C67F42539C12D009611AC /* m.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C67F32539C12D009611AC /* m.swift */; };
-		A87F40EB253739BB0037710D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A87F40EA253739BB0037710D /* GoogleService-Info.plist */; };
 		A87F40F425373BDD0037710D /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27447E60751945E590E44ED2 /* Roboto-Bold.ttf */; };
 		A87F40F525373BDD0037710D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 424ADA224A32491ABEBBD4F7 /* Roboto-Medium.ttf */; };
 		A87F40F625373BDD0037710D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71881B16D20F4190AF7E138E /* Roboto-Regular.ttf */; };
 		A87F40F725373BDD0037710D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12CF9C4ABE7248659767D589 /* Roboto-Thin.ttf */; };
 		A87F40F825373BDD0037710D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3A8DE2428C4EE2B927EC20 /* Roboto-ThinItalic.ttf */; };
+		A8A7C68B253DDC9F00C94EB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8A7C68A253DDC9F00C94EB0 /* GoogleService-Info.plist */; };
 		CF45E35D7EBE8638E64B58A9 /* libPods-supmilktea-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 585087BCCB04D4365290EF00 /* libPods-supmilktea-tvOS.a */; };
 		E9EA72946DE06D5972DA178D /* libPods-supmilktea-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 282E88B2BED8676D6C41DE00 /* libPods-supmilktea-tvOSTests.a */; };
 /* End PBXBuildFile section */
@@ -98,7 +98,7 @@
 		A87F40BD253737C60037710D /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		A87F40BE253737C60037710D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		A87F40BF253737C60037710D /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		A87F40EA253739BB0037710D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A8A7C68A253DDC9F00C94EB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9810B2B79734B5081DC19D3 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		A9C7288EA17046BEE0087130 /* libPods-supmilktea-supmilkteaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-supmilktea-supmilkteaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD25F6E2B5F744ABB939667E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
@@ -248,8 +248,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A8A7C68A253DDC9F00C94EB0 /* GoogleService-Info.plist */,
 				A87C67F32539C12D009611AC /* m.swift */,
-				A87F40EA253739BB0037710D /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* supmilktea */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* supmilkteaTests */,
@@ -396,6 +396,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 2R3KC8256J;
 						LastSwiftMigration = 1200;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -443,13 +444,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A87F40F425373BDD0037710D /* Roboto-Bold.ttf in Resources */,
+				A8A7C68B253DDC9F00C94EB0 /* GoogleService-Info.plist in Resources */,
 				A87F40F525373BDD0037710D /* Roboto-Medium.ttf in Resources */,
 				A87F40F625373BDD0037710D /* Roboto-Regular.ttf in Resources */,
 				A87F40F725373BDD0037710D /* Roboto-Thin.ttf in Resources */,
 				A87F40F825373BDD0037710D /* Roboto-ThinItalic.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				A87F40EB253739BB0037710D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -851,11 +852,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2R3KC8256J;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(HOME)/Documents/FacebookSDK",
-					" ",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Documents/FacebookSDK  ";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = supmilktea/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -864,7 +863,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.supmilktea;
 				PRODUCT_NAME = supmilktea;
 				SWIFT_OBJC_BRIDGING_HEADER = "supmilktea-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -880,10 +879,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(HOME)/Documents/FacebookSDK",
-					" ",
-				);
+				DEVELOPMENT_TEAM = 2R3KC8256J;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Documents/FacebookSDK  ";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = supmilktea/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -892,7 +889,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.supmilktea;
 				PRODUCT_NAME = supmilktea;
 				SWIFT_OBJC_BRIDGING_HEADER = "supmilktea-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
