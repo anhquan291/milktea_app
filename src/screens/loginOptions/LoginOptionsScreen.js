@@ -1,15 +1,20 @@
 import React from 'react';
 import {View, StyleSheet, Image, ImageBackground} from 'react-native';
+import {useSelector} from 'react-redux';
 import {HEIGHT, WIDTH} from '../../ultils/constant';
 import {LightText} from '../../components/text';
 import Colors from '../../ultils/colors';
 import {LoginOptionsBody} from './components';
+import {Loader} from '../../components/loader';
 
 const LoginOptionsScreen = () => {
+  const isLoading = useSelector((state) => state.user.isLoading);
   return (
     <View style={styles.container}>
+      {isLoading ? <Loader /> : <></>}
       <ImageBackground
         source={require('../../assets/images/treebackground.png')}
+        blurRadius={3}
         style={styles.bg}
       />
       <View>
@@ -33,7 +38,7 @@ const styles = StyleSheet.create({
   },
   bg: {
     width: WIDTH,
-    height: HEIGHT / 2,
+    height: HEIGHT / 1.5,
     position: 'absolute',
     bottom: 0,
     resizeMode: 'contain',

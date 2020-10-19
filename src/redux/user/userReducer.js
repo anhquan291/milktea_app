@@ -2,7 +2,7 @@ import {
   AUTOLOGIN_SUCCESS,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
-  MOVETOADDINFO,
+  MOVE_TO_ADDINFO,
   SIGNUP_SUCCESS,
   USER_REQUEST,
   USER_REQUEST_FAIL,
@@ -37,6 +37,7 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
+        isNewUser: false,
         isLoading: false,
       };
     case AUTOLOGIN_SUCCESS:
@@ -44,18 +45,18 @@ const userReducer = (state = initialState, action) => {
         ...state,
         user: action.user,
       };
+    case MOVE_TO_ADDINFO:
+      return {
+        ...state,
+        isNewUser: true,
+        isLoading: false,
+      };
     case USER_REQUEST_FAIL:
       return {
         ...state,
         isLoading: false,
       };
-    case MOVETOADDINFO:
-      return {
-        ...state,
-        user: null,
-        isNewUser: true,
-        isLoading: false,
-      };
+
     default:
       return state;
   }

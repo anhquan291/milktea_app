@@ -44,7 +44,7 @@ export const PhoneForm = () => {
   return (
     <KeyboardAvoidingView
       style={{flex: 1}}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      behavior={Platform.OS === 'ios' ? 'padding' : ''}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.phoneContainer}>

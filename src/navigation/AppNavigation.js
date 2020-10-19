@@ -15,13 +15,12 @@ const AppNavigation = () => {
   const enterAppWithoutUser = useSelector(
     (state) => state.withoutUser.enterAppWithoutUser,
   );
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.user);
 
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     auth().onAuthStateChanged(async function (current) {
-      console.log(current);
       if (current && current.displayName !== null) {
         setCurrentUser(current._user);
         dispatch(
@@ -40,7 +39,7 @@ const AppNavigation = () => {
     <NavigationContainer>
       {!firstOpenApp ? (
         <IntroStackScreens />
-      ) : user.user !== null ||
+      ) : user !== null ||
         currentUser !== null ||
         enterAppWithoutUser === true ? (
         <HomeTabScreens />

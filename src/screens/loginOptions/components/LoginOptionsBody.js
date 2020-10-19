@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Alert} from 'react-native';
 import {WIDTH} from '../../../ultils/constant';
 import {useNavigation} from '@react-navigation/native';
 import {MediumText, RegularText} from '../../../components/text';
@@ -8,8 +8,8 @@ import Colors from '../../../ultils/colors';
 import {ButtonWithBG, ButtonWithBorder} from '../../../components/button';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch} from 'react-redux';
-import {withoutUserActions} from '../../../redux';
-import propTypes from 'prop-types';
+import {withoutUserActions, userActions} from '../../../redux';
+// import propTypes from 'prop-types';
 
 export const LoginOptionsBody = () => {
   const dispatch = useDispatch();
@@ -21,9 +21,21 @@ export const LoginOptionsBody = () => {
       console.log(err);
     }
   };
+  const fbLogin = async () => {
+    try {
+      await dispatch(userActions.loginWithFb());
+    } catch (err) {
+      Alert.alert('Thông báo', 'Đăng nhập không thành công', [
+        {text: 'Thử lại'},
+      ]);
+    }
+  };
   return (
     <View style={styles.container}>
-      <ButtonWithBG color={Colors.bluefb} style={styles.button}>
+      <ButtonWithBG
+        onPress={fbLogin}
+        color={Colors.bluefb}
+        style={styles.button}>
         <Icon
           name="facebook"
           size={25}
@@ -76,7 +88,7 @@ export const LoginOptionsBody = () => {
   );
 };
 
-LoginOptionsBody.propTypes = {};
+// LoginOptionsBody.propTypes = {};
 const styles = StyleSheet.create({
   container: {
     flex: 1,

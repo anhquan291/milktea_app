@@ -37,7 +37,7 @@ export const InfoForm = () => {
   return (
     <KeyboardAvoidingView
       style={{flex: 1}}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      behavior={Platform.OS === 'ios' ? 'padding' : ''}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.phoneContainer}>
@@ -48,7 +48,7 @@ export const InfoForm = () => {
               rules={{
                 required: 'Không được bỏ trống',
                 validate: (value) =>
-                  value.length > 6 || 'Tên phải nhiều hơn 6 ký tự',
+                  value.length >= 6 || 'Tên phải nhiều hơn 6 ký tự',
               }}
               render={(props) => (
                 <TextInput

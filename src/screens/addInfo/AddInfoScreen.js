@@ -10,10 +10,11 @@ import {useSelector} from 'react-redux';
 
 const AddInfoScreen = ({navigation, route}) => {
   const isLoading = useSelector((state) => state.otp.isLoading);
+  const isLoadingUser = useSelector((state) => state.user.isLoading);
   const {phone} = route.params;
   return (
     <View style={styles.container}>
-      {isLoading ? <Loader /> : <></>}
+      {isLoading || isLoadingUser ? <Loader /> : <></>}
       <View style={styles.contentWrapper}>
         <Icon
           onPress={() => navigation.goBack()}
