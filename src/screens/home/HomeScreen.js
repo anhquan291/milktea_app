@@ -1,23 +1,15 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {userActions, withoutUserActions} from '../../redux';
+import {Banners} from './components';
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
-  // console.log(user.user);
+
   return (
     <View style={styles.container}>
-      <Text>Hi {user !== null ? user.name : 'Guest'}</Text>
-      {user !== null ? (
-        <Button title="Logout" onPress={() => dispatch(userActions.logout())} />
-      ) : (
-        <Button
-          title="Login"
-          onPress={() => dispatch(withoutUserActions.toLogoutScreen())}
-        />
-      )}
+      <Banners />
     </View>
   );
 };

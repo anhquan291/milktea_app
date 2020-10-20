@@ -1,11 +1,15 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   createStackNavigator,
   CardStyleInterpolators,
 } from '@react-navigation/stack';
+import {Image} from 'react-native';
 import Colors from '../ultils/colors';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 // Screens
 import IntroScreen from '../screens/intro';
 // Home
@@ -118,7 +122,7 @@ export const HomeTabScreens = () => (
       options={{
         tabBarLabel: 'Trang chủ',
         tabBarIcon: ({color, size}) => (
-          <Icon name="home" color={color} size={25} />
+          <Icon name="home" color={color} size={22} />
         ),
       }}
     />
@@ -128,7 +132,7 @@ export const HomeTabScreens = () => (
       options={{
         tabBarLabel: 'Cửa hàng',
         tabBarIcon: ({color, size}) => (
-          <Icon name="store" color={color} size={25} />
+          <MaterialIcons name="store" color={color} size={25} />
         ),
       }}
     />
@@ -138,7 +142,16 @@ export const HomeTabScreens = () => (
       options={{
         tabBarLabel: 'Đặt hàng',
         tabBarIcon: ({color, size}) => (
-          <Icon name="home" color={color} size={25} />
+          <Image
+            source={require('../assets/images/button-tab.png')}
+            style={{
+              resizeMode: 'contain',
+              width: 65,
+              height: 65,
+              position: 'absolute',
+              bottom: 0,
+            }}
+          />
         ),
       }}
     />
@@ -148,7 +161,7 @@ export const HomeTabScreens = () => (
       options={{
         tabBarLabel: 'Thông báo',
         tabBarIcon: ({color, size}) => (
-          <Icon name="home" color={color} size={25} />
+          <FontAwesome name="bell-o" color={color} size={22} />
         ),
       }}
     />
@@ -158,7 +171,7 @@ export const HomeTabScreens = () => (
       options={{
         tabBarLabel: 'Khác',
         tabBarIcon: ({color, size}) => (
-          <Icon name="home" color={color} size={25} />
+          <MaterialIcons name="dots-horizontal" size={24} color={color} />
         ),
       }}
     />

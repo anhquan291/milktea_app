@@ -6,7 +6,7 @@ export default {
   grey: 'grey',
   light_grey: '#d0d4d8',
   black: '#000000',
-  yellow: '#f2e87d',
+  yellow: '#f6ce46',
   bluefb: '#4064AC',
   red: '#fc5353',
 };
