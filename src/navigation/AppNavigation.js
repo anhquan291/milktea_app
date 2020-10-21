@@ -23,12 +23,7 @@ const AppNavigation = () => {
     auth().onAuthStateChanged(async function (current) {
       if (current && current.displayName !== null) {
         setCurrentUser(current._user);
-        dispatch(
-          userActions.autoLogin({
-            name: current.displayName,
-            phone: current.phoneNumber,
-          }),
-        );
+        dispatch(userActions.autoLogin(current.uid));
       } else {
         setCurrentUser(null);
       }
