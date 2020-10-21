@@ -30,14 +30,14 @@ export const login = (code) => {
           type: MOVE_TO_ADDINFO,
         });
       }
-      const user = {
-        uid: userConfirm.user.udi,
-        name: userConfirm.user.displayName,
-        phone: userConfirm.user.phoneNumber,
-      };
+      const user = await firestore()
+        .collection('users')
+        .doc(userConfirm.user.udi)
+        .get();
+
       dispatch({
         type: LOGIN_SUCCESS,
-        user,
+        user: user._data,
       });
     } catch (err) {
       dispatch({
@@ -62,6 +62,7 @@ export const signup = (name) => {
           uid: user.uid,
           name,
           phone: user.phoneNumber,
+          point: 0,
         })
         .then(() => {
           console.log('User added!');
@@ -73,7 +74,7 @@ export const signup = (name) => {
 
       dispatch({
         type: SIGNUP_SUCCESS,
-        user: {name, phone: user.phoneNumber},
+        user: {name, phone: user.phoneNumber, point: 0},
       });
     } catch (err) {
       dispatch({
@@ -126,14 +127,20 @@ export const loginWithFb = () => {
           .set({
             uid: fbUser.user._user.uid,
             name: fbUser.user._user.displayName,
+            phone: '',
+            point: 0,
           })
           .then(() => {
             console.log('User added!');
           });
       }
+      const user = await firestore()
+        .collection('users')
+        .doc(fbUser.user._user.uid)
+        .get();
       dispatch({
         type: LOGIN_SUCCESS,
-        user: {uid: fbUser.user._user.uid, name: fbUser.user._user.displayName},
+        user: user._data,
       });
     } catch (err) {
       dispatch({
@@ -163,14 +170,21 @@ export const logout = () => {
   };
 };
 
-export const autoLogin = (user) => {
+export const autoLogin = (uid) => {
   return async (dispatch) => {
+    dispatch({
+      type: USER_REQUEST,
+    });
     try {
+      const user = await firestore().collection('users').doc(uid).get();
       dispatch({
         type: AUTOLOGIN_SUCCESS,
-        user,
+        user: user._data,
       });
     } catch (err) {
+      dispatch({
+        type: USER_REQUEST_FAIL,
+      });
       throw err;
     }
   };
