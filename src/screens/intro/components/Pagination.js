@@ -11,7 +11,7 @@ const DOT_SIZE = 20;
 export const Pagination = ({scrollX, slides}) => {
   const translateX = scrollX.interpolate({
     inputRange: [0, WIDTH, WIDTH * 2],
-    outputRange: [-DOT_SIZE, DOT_SIZE - 10, DOT_SIZE * 3 - 10],
+    outputRange: [-DOT_SIZE, 0, DOT_SIZE],
     extrapolate: 'clamp',
   });
   return (
@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
     height: DOT_SIZE * 0.5,
     borderRadius: DOT_SIZE * 0.5,
     backgroundColor: Colors.light_grey,
-    marginRight: 30,
+    marginRight: 10,
   },
   paginationIndicator: {
-    width: DOT_SIZE * 1.5,
+    width: DOT_SIZE * 0.5,
     height: DOT_SIZE * 0.5,
-    borderRadius: DOT_SIZE / 2,
+    borderRadius: DOT_SIZE * 0.5,
     backgroundColor: Colors.primary,
     left: 20,
     zIndex: 1000,

@@ -7,7 +7,7 @@ import {
   AuthStackScreens,
 } from './SoupNavigation';
 import auth from '@react-native-firebase/auth';
-import {userActions} from '../redux';
+import {UserActions} from '../redux';
 
 const AppNavigation = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const AppNavigation = () => {
   useEffect(() => {
     auth().onAuthStateChanged(async function (current) {
       if (current && current.displayName !== null) {
-        dispatch(userActions.autoLogin(current.uid));
+        await dispatch(UserActions.autoLogin(current.uid));
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

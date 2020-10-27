@@ -1,13 +1,16 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   View,
   Image,
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  Animated,
+  ActivityIndicator,
 } from 'react-native';
 import {ShadowView} from '../../../components/Shadow';
 import {WIDTH} from '../../../ultils/Constants';
+import Colors from '../../../themes/Colors';
 import {useSelector} from 'react-redux';
 import propTypes from 'prop-types';
 
@@ -17,7 +20,16 @@ const BANNER_HEIGHT = 200;
 
 export const Banners = ({navigation}) => {
   const scrollX = useRef();
+  const imageAnimated = new Animated.Value(0);
+  const [isLoading, setIsLoading] = useState(true);
   const BANNERS = useSelector((state) => state.banners.banners);
+  const onImageLoad = () => {
+    setIsLoading(false);
+    Animated.timing(imageAnimated, {
+      toValue: 1,
+      useNativeDriver: true,
+    }).start();
+  };
   // TODO _goToNextPage()
   const _goToNextPage = () => {
     if (CurrentSlide >= BANNERS.length - 1) {
@@ -50,7 +62,7 @@ export const Banners = ({navigation}) => {
   };
 
   return (
-    <View>
+    <View style={styles.bannerWrapper}>
       <FlatList
         data={BANNERS}
         horizontal
@@ -61,13 +73,20 @@ export const Banners = ({navigation}) => {
         renderItem={({item}) => (
           <ShadowView style={styles.bannerWrapper}>
             <TouchableOpacity onPress={() => moveToDetail(item._data)}>
-              <Image
-                style={styles.banner}
+              <Animated.Image
+                style={{...styles.banner, opacity: imageAnimated}}
                 source={{
                   uri: item._data.img,
                 }}
+                onLoadEnd={onImageLoad}
               />
             </TouchableOpacity>
+
+            {isLoading && (
+              <View style={styles.placeHolder}>
+                <ActivityIndicator size="small" color={Colors.primary} />
+              </View>
+            )}
           </ShadowView>
         )}
         ref={scrollX}
@@ -89,5 +108,12 @@ const styles = StyleSheet.create({
     width: WIDTH - 40,
     height: '100%',
     borderRadius: 10,
+  },
+  placeHolder: {
+    height: '100%',
+    width: WIDTH - 40,
+    // backgroundColor: 'red',
+    position: 'absolute',
+    justifyContent: 'center',
   },
 });

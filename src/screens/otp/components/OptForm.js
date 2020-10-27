@@ -13,7 +13,7 @@ import Colors from '../../../themes/Colors';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 import Timer from './Timer';
 import {useDispatch, useSelector} from 'react-redux';
-import {userActions} from '../../../redux';
+import {UserActions} from '../../../redux';
 import propTypes from 'prop-types';
 
 export const OtpForm = ({phone}) => {
@@ -31,7 +31,7 @@ export const OtpForm = ({phone}) => {
 
   const verify = async (code) => {
     try {
-      await dispatch(userActions.login(code));
+      await dispatch(UserActions.login(code));
     } catch (err) {
       Alert.alert('Invalid OTP', 'Mã OTP không hợp lệ', [{text: 'Nhập lại'}]);
     }

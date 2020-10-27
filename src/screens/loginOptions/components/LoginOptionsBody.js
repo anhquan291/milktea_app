@@ -8,7 +8,7 @@ import Colors from '../../../themes/Colors';
 import {ButtonWithBG, ButtonWithBorder} from '../../../components/Button';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch} from 'react-redux';
-import {withoutUserActions, userActions} from '../../../redux';
+import {WithoutUserActions, UserActions} from '../../../redux';
 // import propTypes from 'prop-types';
 
 export const LoginOptionsBody = () => {
@@ -16,14 +16,14 @@ export const LoginOptionsBody = () => {
   const navigation = useNavigation();
   const exprerienceApp = async () => {
     try {
-      await dispatch(withoutUserActions.enterAppWithoutUser());
+      await dispatch(WithoutUserActions.enterAppWithoutUser());
     } catch (err) {
       console.log(err);
     }
   };
   const fbLogin = async () => {
     try {
-      await dispatch(userActions.loginWithFb());
+      await dispatch(UserActions.loginWithFb());
     } catch (err) {
       Alert.alert('Thông báo', 'Đăng nhập không thành công', [
         {text: 'Thử lại'},

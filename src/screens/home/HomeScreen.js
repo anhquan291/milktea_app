@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, ScrollView, FlatList} from 'react-native';
 import Animated from 'react-native-reanimated';
 import Colors from '../../themes/Colors';
 import {useDispatch, useSelector} from 'react-redux';
-import {bannerActions} from '../../redux';
+import {BannerActions} from '../../redux';
 import {WIDTH} from '../../ultils/Constants';
 import {Header, Banners} from './components';
 import {Loader} from '../../components/Loader';
@@ -18,12 +18,21 @@ const HomeScreen = ({navigation}) => {
   for (let i = 0; i <= 5; i++) {
     data.push({name: i});
   }
+  const getBanners = async () => {
+    try {
+      await dispatch(BannerActions.getBanner());
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
-    dispatch(bannerActions.getBanner());
-  }, []);
+    getBanners();
+  }, [dispatch]);
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <View style={styles.container}>
-      {isLoading && <Loader style={{backgroundColor: Colors.white}} />}
       <Header scrollY={scrollY} />
       <AnimatedFlatList
         data={data}

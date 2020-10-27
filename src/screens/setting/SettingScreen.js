@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Text, View, StyleSheet, Button} from 'react-native';
-import {userActions, withoutUserActions} from '../../redux';
+import {UserActions, WithoutUserActions} from '../../redux';
 import {useSelector, useDispatch} from 'react-redux';
 import {MediumText, RegularText} from '../../components/Text';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -16,11 +16,16 @@ const SettingScreen = ({navigation}) => {
     <View style={styles.container}>
       <Text>Hi {user !== null ? user.name : 'Guest'}</Text>
       {user !== null ? (
-        <Button title="Logout" onPress={() => dispatch(userActions.logout())} />
+        <Button
+          title="Logout"
+          onPress={async () => await dispatch(UserActions.logout())}
+        />
       ) : (
         <Button
           title="Login"
-          onPress={() => dispatch(withoutUserActions.toLogoutScreen())}
+          onPress={async () =>
+            await dispatch(WithoutUserActions.toLogoutScreen())
+          }
         />
       )}
       <SettingBody />

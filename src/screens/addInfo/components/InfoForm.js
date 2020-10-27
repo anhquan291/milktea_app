@@ -16,7 +16,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 // Form
 import {useForm, Controller} from 'react-hook-form';
 // Action
-import {userActions} from '../../../redux';
+import {UserActions} from '../../../redux';
 import {useDispatch} from 'react-redux';
 // import propTypes from 'prop-types';
 
@@ -29,7 +29,7 @@ export const InfoForm = () => {
   }, []);
   const onSubmit = async (data) => {
     try {
-      await dispatch(userActions.signup(data.name));
+      await dispatch(UserActions.signup(data.name));
     } catch (err) {
       console.log(err);
     }

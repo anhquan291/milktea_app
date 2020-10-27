@@ -7,7 +7,7 @@ import {
   Animated,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import {firstOpenActions} from '../../redux';
+import {FirstOpenActions} from '../../redux';
 import {Slides, Pagination} from './components';
 import slides from '../../db/IntroSlides';
 import {WIDTH, HEIGHT} from '../../ultils/Constants';
@@ -16,8 +16,8 @@ import {MediumText} from '../../components/Text';
 
 const IntroScreen = () => {
   const dispatch = useDispatch();
-  const enterApp = () => {
-    dispatch(firstOpenActions.firstOpenApp());
+  const enterApp = async () => {
+    await dispatch(FirstOpenActions.firstOpenApp());
   };
   const scrollX = new Animated.Value(0);
   const scrollClick = useRef(null);
