@@ -7,17 +7,19 @@ import ReduxThunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import AppNavigation from './src/navigation';
 import {
-  userReducer,
-  firstOpenReducer,
-  otpReducer,
-  withoutUserReducer,
+  UserReducer,
+  FirstOpenReducer,
+  OtpReducer,
+  WithoutUserReducer,
+  BannerReducer,
 } from './src/redux';
 
 const rootReducer = combineReducers({
-  user: userReducer,
-  firstOpenApp: firstOpenReducer,
-  otp: otpReducer,
-  withoutUser: withoutUserReducer,
+  user: UserReducer,
+  firstOpenApp: FirstOpenReducer,
+  otp: OtpReducer,
+  withoutUser: WithoutUserReducer,
+  banners: BannerReducer,
 });
 const store = createStore(
   rootReducer,

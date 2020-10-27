@@ -1,31 +1,36 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {View, Text, StyleSheet, ScrollView, FlatList} from 'react-native';
 import Animated from 'react-native-reanimated';
-import Colors from '../../ultils/colors';
+import Colors from '../../themes/Colors';
 import {useDispatch, useSelector} from 'react-redux';
-import {userActions} from '../../redux';
-import {WIDTH} from '../../ultils/constant';
-import {Banners, Header} from './components';
+import {bannerActions} from '../../redux';
+import {WIDTH} from '../../ultils/Constants';
+import {Header, Banners} from './components';
+import {Loader} from '../../components/Loader';
 // Animated Flatlist
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.banners.isLoading);
   const scrollY = new Animated.Value(0);
   let data = [];
   for (let i = 0; i <= 5; i++) {
     data.push({name: i});
   }
-  console.log(data);
+  useEffect(() => {
+    dispatch(bannerActions.getBanner());
+  }, []);
   return (
     <View style={styles.container}>
+      {isLoading && <Loader style={{backgroundColor: Colors.white}} />}
       <Header scrollY={scrollY} />
       <AnimatedFlatList
         data={data}
         contentContainerStyle={styles.list}
         keyExtractor={(item, index) => index.toString()}
         showsVerticalScrollIndicator={false}
-        ListHeaderComponent={() => <Banners />}
+        ListHeaderComponent={() => <Banners navigation={navigation} />}
         renderItem={({item}) => (
           <View
             style={{

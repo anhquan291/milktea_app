@@ -1,4 +1,4 @@
-import * as withoutUserActions from './withoutUserActions';
-import withoutUserReducer from './withoutUserReducer';
+import * as WithoutUserActions from './WithoutUser.actions';
+import WithoutUserReducer from './WithoutUser.reducer';
 
-export {withoutUserActions, withoutUserReducer};
+export {WithoutUserActions, WithoutUserReducer};

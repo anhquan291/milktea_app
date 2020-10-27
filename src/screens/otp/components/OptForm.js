@@ -9,7 +9,7 @@ import {
   Alert,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import Colors from '../../../ultils/colors';
+import Colors from '../../../themes/Colors';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 import Timer from './Timer';
 import {useDispatch, useSelector} from 'react-redux';

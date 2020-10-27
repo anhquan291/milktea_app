@@ -10,10 +10,10 @@ import {
   Alert,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {WIDTH} from '../../../ultils/constant';
-import {ButtonWithBG} from '../../../components/button';
-import {MediumText, RegularText} from '../../../components/text';
-import Colors from '../../../ultils/colors';
+import {WIDTH} from '../../../ultils/Constants';
+import {ButtonWithBG} from '../../../components/Button';
+import {MediumText, RegularText} from '../../../components/Text';
+import Colors from '../../../themes/Colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 // Form
 import {useForm, Controller} from 'react-hook-form';

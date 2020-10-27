@@ -1,56 +1,93 @@
-/* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
-import {WIDTH} from '../../../ultils/constant';
-import {ButtonWithBG} from '../../../components/button';
-import {MediumText, RegularText} from '../../../components/text';
-import Colors from '../../../ultils/colors';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import React, {useEffect, useRef} from 'react';
+import {
+  View,
+  Image,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
+import {ShadowView} from '../../../components/Shadow';
+import {WIDTH} from '../../../ultils/Constants';
+import {useSelector} from 'react-redux';
 import propTypes from 'prop-types';
 
-const BANNERS = [
-  {id: '1', name: 'Trà đào', img: ''},
-  {id: '2', name: 'Trà đào', img: ''},
-  {id: '3', name: 'Trà đào', img: ''},
-  {id: '4', name: 'Trà đào', img: ''},
-];
+let CurrentSlide = 0;
+let IntervalTime = 4000;
+const BANNER_HEIGHT = 200;
 
-export const Banners = () => {
+export const Banners = ({navigation}) => {
+  const scrollX = useRef();
+  const BANNERS = useSelector((state) => state.banners.banners);
+  // TODO _goToNextPage()
+  const _goToNextPage = () => {
+    if (CurrentSlide >= BANNERS.length - 1) {
+      CurrentSlide = -1;
+    }
+    scrollX.current.scrollToIndex({
+      index: ++CurrentSlide,
+      animated: true,
+    });
+  };
+  let _timerId;
+  const _startAutoPlay = () => {
+    _timerId = setInterval(_goToNextPage, IntervalTime);
+  };
+
+  const _stopAutoPlay = () => {
+    if (_timerId) {
+      clearInterval(_timerId);
+      _timerId = null;
+    }
+  };
+
+  useEffect(() => {
+    _startAutoPlay();
+    return () => _stopAutoPlay();
+  }, []);
+
+  const moveToDetail = (item) => {
+    navigation.navigate('BannerDetailScreen', {item});
+  };
+
   return (
-    <View style={styles.container}>
+    <View>
       <FlatList
         data={BANNERS}
-        keyExtractor={(item) => item.id}
         horizontal
-        showsHorizontalScrollIndicator={false}
         decelerationRate="fast"
         snapToInterval={WIDTH}
-        contentContainerStyle={{alignItems: 'center'}}
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(item) => item.id}
         renderItem={({item}) => (
-          <View style={styles.bannerWrapper}>
-            <View style={styles.banner}>
-              <MediumText>{item.name}</MediumText>
-            </View>
-          </View>
+          <ShadowView style={styles.bannerWrapper}>
+            <TouchableOpacity onPress={() => moveToDetail(item._data)}>
+              <Image
+                style={styles.banner}
+                source={{
+                  uri: item._data.img,
+                }}
+              />
+            </TouchableOpacity>
+          </ShadowView>
         )}
+        ref={scrollX}
       />
     </View>
   );
 };
-
-Banners.propTypes = {};
+Banners.propTypes = {
+  navigation: propTypes.object.isRequired,
+};
 const styles = StyleSheet.create({
-  container: {},
   bannerWrapper: {
     width: WIDTH,
-    height: 200,
-    borderRadius: 0,
+    height: BANNER_HEIGHT,
     alignItems: 'center',
   },
   banner: {
+    resizeMode: 'stretch',
     width: WIDTH - 40,
     height: '100%',
-    alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255,0.5)',
+    borderRadius: 10,
   },
 });

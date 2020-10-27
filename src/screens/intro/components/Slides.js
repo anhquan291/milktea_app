@@ -6,8 +6,8 @@ import {
   Platform,
   TouchableOpacity,
 } from 'react-native';
-import {HEIGHT, WIDTH} from '../../../ultils/constant';
-import {MediumText} from '../../../components/text';
+import {HEIGHT, WIDTH} from '../../../ultils/Constants';
+import {MediumText} from '../../../components/Text';
 import propTypes from 'prop-types';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 

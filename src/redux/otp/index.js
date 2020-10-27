@@ -1,4 +1,4 @@
-import * as otpActions from './otpActions';
-import otpReducer from './otpReducer';
+import * as OtpActions from './Otp.actions';
+import OtpReducer from './Otp.reducer';
 
-export {otpActions, otpReducer};
+export {OtpActions, OtpReducer};

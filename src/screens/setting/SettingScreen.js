@@ -3,11 +3,11 @@ import React from 'react';
 import {Text, View, StyleSheet, Button} from 'react-native';
 import {userActions, withoutUserActions} from '../../redux';
 import {useSelector, useDispatch} from 'react-redux';
-import {MediumText, RegularText} from '../../components/text';
+import {MediumText, RegularText} from '../../components/Text';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Colors from '../../ultils/colors';
+import Colors from '../../themes/Colors';
 import {SettingBody} from './components';
-import {Loader} from '../../components/loader';
+import {Loader} from '../../components/Loader';
 
 const SettingScreen = ({navigation}) => {
   const dispatch = useDispatch();

@@ -1,3 +1,3 @@
-import StoreChainScreen from './StoreChainScreen';
+import BannerDetailScreen from './BannerDetailScreen';
 
-export default StoreChainScreen;
+export default BannerDetailScreen;

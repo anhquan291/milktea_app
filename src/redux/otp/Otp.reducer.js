@@ -1,11 +1,11 @@
-import {OTP_FAIL, OTP_REQUEST, OTP_SUCCESS} from './otpActions';
+import {OTP_FAIL, OTP_REQUEST, OTP_SUCCESS} from './Otp.actions';
 
 const initialState = {
   confirmation: null,
   isLoading: false,
 };
 
-const otpReducer = (state = initialState, action) => {
+const OtpReducer = (state = initialState, action) => {
   switch (action.type) {
     case OTP_REQUEST:
       return {
@@ -28,4 +28,4 @@ const otpReducer = (state = initialState, action) => {
   }
 };
 
-export default otpReducer;
+export default OtpReducer;
