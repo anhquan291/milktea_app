@@ -11,11 +11,11 @@ import Animated, {Extrapolate} from 'react-native-reanimated';
 import {useSelector} from 'react-redux';
 import Foundation from 'react-native-vector-icons/Foundation';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {HEIGHT, WIDTH} from '../../../ultils/constant';
+import {HEIGHT, WIDTH} from '../../../ultils/Constants';
 import MenuItem from './MenuItem';
-import {MediumText, RegularText} from '../../../components/text';
-import {ShadowView} from '../../../components/shadow';
-import Colors from '../../../ultils/colors';
+import {MediumText, RegularText} from '../../../components/Text';
+import {ShadowView} from '../../../components/Shadow';
+import Colors from '../../../themes/Colors';
 import propTypes from 'prop-types';
 
 const HEADER_HEIGHT = 170;
@@ -31,7 +31,8 @@ export const Header = ({scrollY}) => {
   });
   const menuListTranslateY = Animated.interpolate(scrollY, {
     inputRange: [0, HEADER_DISTANCE],
-    outputRange: [0, HEIGHT > 684 ? -HEADER_MIN / 2.7 : -HEADER_MIN / 3],
+    // outputRange: [0, HEIGHT > 684 ? -HEADER_MIN / 3 : -HEADER_MIN / 3],
+    outputRange: [0, -HEADER_MIN / 3],
     extrapolate: Extrapolate.CLAMP,
   });
   const menuListBorder = Animated.interpolate(scrollY, {

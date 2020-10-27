@@ -2,11 +2,11 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {useIsFocused} from '@react-navigation/native';
-import {MediumText, RegularText} from '../../../components/text';
+import {MediumText, RegularText} from '../../../components/Text';
 import {useDispatch} from 'react-redux';
 import {otpActions} from '../../../redux';
 import moment from 'moment';
-import Colors from '../../../ultils/colors';
+import Colors from '../../../themes/Colors';
 import propTypes from 'prop-types';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 

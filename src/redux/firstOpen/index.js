@@ -1,4 +1,4 @@
-import * as firstOpenActions from './firstOpenActions';
-import firstOpenReducer from './firstOpenReducer';
+import * as FirstOpenActions from './FirstOpen.actions';
+import FirstOpenReducer from './FirstOpen.reducer';
 
-export {firstOpenActions, firstOpenReducer};
+export {FirstOpenActions, FirstOpenReducer};

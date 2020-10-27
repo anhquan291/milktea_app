@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {WIDTH} from '../../ultils/constant';
+import {WIDTH} from '../../ultils/Constants';
 const ButtonWithBorder = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress}>

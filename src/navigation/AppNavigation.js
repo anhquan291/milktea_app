@@ -22,10 +22,7 @@ const AppNavigation = () => {
   useEffect(() => {
     auth().onAuthStateChanged(async function (current) {
       if (current && current.displayName !== null) {
-        setCurrentUser(current._user);
         dispatch(userActions.autoLogin(current.uid));
-      } else {
-        setCurrentUser(null);
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,9 +31,7 @@ const AppNavigation = () => {
     <NavigationContainer>
       {!firstOpenApp ? (
         <IntroStackScreens />
-      ) : user !== null ||
-        currentUser !== null ||
-        enterAppWithoutUser === true ? (
+      ) : user !== null || enterAppWithoutUser === true ? (
         <HomeTabScreens />
       ) : (
         <AuthStackScreens />

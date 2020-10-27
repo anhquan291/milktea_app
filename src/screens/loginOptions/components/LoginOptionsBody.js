@@ -1,11 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, StyleSheet, Alert} from 'react-native';
-import {WIDTH} from '../../../ultils/constant';
+import {WIDTH} from '../../../ultils/Constants';
 import {useNavigation} from '@react-navigation/native';
-import {MediumText, RegularText} from '../../../components/text';
-import Colors from '../../../ultils/colors';
-import {ButtonWithBG, ButtonWithBorder} from '../../../components/button';
+import {MediumText, RegularText} from '../../../components/Text';
+import Colors from '../../../themes/Colors';
+import {ButtonWithBG, ButtonWithBorder} from '../../../components/Button';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch} from 'react-redux';
 import {withoutUserActions, userActions} from '../../../redux';

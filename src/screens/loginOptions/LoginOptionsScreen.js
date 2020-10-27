@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, StyleSheet, Image, ImageBackground} from 'react-native';
 import {useSelector} from 'react-redux';
-import {HEIGHT, WIDTH} from '../../ultils/constant';
-import {LightText} from '../../components/text';
-import Colors from '../../ultils/colors';
+import {HEIGHT, WIDTH} from '../../ultils/Constants';
+import {LightText} from '../../components/Text';
+import Colors from '../../themes/Colors';
 import {LoginOptionsBody} from './components';
-import {Loader} from '../../components/loader';
+import {Loader} from '../../components/Loader';
 
 const LoginOptionsScreen = () => {
   const isLoading = useSelector((state) => state.user.isLoading);

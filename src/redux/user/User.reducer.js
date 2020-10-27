@@ -6,7 +6,7 @@ import {
   SIGNUP_SUCCESS,
   USER_REQUEST,
   USER_REQUEST_FAIL,
-} from './userActions';
+} from './User.actions';
 
 const initialState = {
   user: null,
@@ -14,7 +14,7 @@ const initialState = {
   isNewUser: false,
 };
 
-const userReducer = (state = initialState, action) => {
+const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_REQUEST:
       return {
@@ -62,4 +62,4 @@ const userReducer = (state = initialState, action) => {
   }
 };
 
-export default userReducer;
+export default UserReducer;

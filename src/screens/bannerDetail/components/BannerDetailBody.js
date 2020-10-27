@@ -1,16 +1,36 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {WIDTH} from '../../../ultils/constant';
-import {ButtonWithBG} from '../../../components/button';
-import {MediumText, RegularText} from '../../../components/text';
-import Colors from '../../../ultils/colors';
+import {View, StyleSheet, Image} from 'react-native';
+import {WIDTH, HEIGHT, SPACING} from '../../../ultils/Constants';
+import {ButtonWithBG} from '../../../components/Button';
+import {MediumText, RegularText} from '../../../components/Text';
+import Colors from '../../../themes/Colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import FastImage from 'react-native-fast-image';
 import propTypes from 'prop-types';
 
-export const BannerDetailBody = () => {
-  return <View></View>;
+const BANNER_HEIGHT = HEIGHT * 0.3;
+
+export const BannerDetailBody = ({item}) => {
+  console.log(item.title);
+  return (
+    <View>
+      <FastImage
+        style={styles.bannerImage}
+        source={{uri: item.img}}
+        resizeMode={FastImage.resizeMode.stretch}
+      />
+    </View>
+  );
 };
 
-BannerDetailBody.propTypes = {};
-const styles = StyleSheet.create({});
+BannerDetailBody.propTypes = {
+  item: propTypes.object.isRequired,
+};
+const styles = StyleSheet.create({
+  bannerImage: {
+    resizeMode: 'stretch',
+    width: WIDTH,
+    height: BANNER_HEIGHT,
+  },
+});

@@ -1,10 +1,10 @@
-import {FIRST_OPEN_APP} from './firstOpenActions';
+import {FIRST_OPEN_APP} from './FirstOpen.actions';
 
 const initialState = {
   firstOpenApp: false,
 };
 
-const firstOpenReducer = (state = initialState, action) => {
+const FirstOpenReducer = (state = initialState, action) => {
   switch (action.type) {
     case FIRST_OPEN_APP:
       return {
@@ -16,4 +16,4 @@ const firstOpenReducer = (state = initialState, action) => {
   }
 };
 
-export default firstOpenReducer;
+export default FirstOpenReducer;

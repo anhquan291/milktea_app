@@ -5,30 +5,31 @@ import {
   CardStyleInterpolators,
 } from '@react-navigation/stack';
 import {Image} from 'react-native';
-import Colors from '../ultils/colors';
+import Colors from '../themes/Colors';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 // Screens
-import IntroScreen from '../screens/intro';
+import IntroScreen from '../screens/Intro';
 // Home
-import HomeScreen from '../screens/home';
+import HomeScreen from '../screens/Home';
+import BannerDetailScreen from '../screens/BannerDetail';
 // Auth
-import LoginOptionsScreen from '../screens/loginOptions';
-import PhoneLoginScreen from '../screens/phoneLogin';
-import OtpScreen from '../screens/otp';
-import AddInfoScreen from '../screens/addInfo';
+import LoginOptionsScreen from '../screens/LoginOptions';
+import PhoneLoginScreen from '../screens/PhoneLogin';
+import OtpScreen from '../screens/Otp';
+import AddInfoScreen from '../screens/AddInfo';
 // Setting
-import SettingScreen from '../screens/setting';
-import ProfileScreen from '../screens/profile';
-import ProfileUpdateScreen from '../screens/profileUpdate';
+import SettingScreen from '../screens/Setting';
+import ProfileScreen from '../screens/Profile';
+import ProfileUpdateScreen from '../screens/ProfileUpdate';
 // Order
-import OrderScreen from '../screens/order';
+import OrderScreen from '../screens/Order';
 // Store Chain
-import StoreChainScreen from '../screens/storeChain';
+import StoreChainScreen from '../screens/StoreChain';
 // Notification
-import NotificationScreen from '../screens/notification';
+import NotificationScreen from '../screens/Notificaiton';
 
 const IntroStack = createStackNavigator();
 export const IntroStackScreens = () => (
@@ -103,6 +104,13 @@ const HomeStack = createStackNavigator();
 export const HomeStackScreens = () => (
   <HomeStack.Navigator screenOptions={{headerShown: false}}>
     <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
+    <HomeStack.Screen
+      name="BannerDetailScreen"
+      component={BannerDetailScreen}
+      options={{
+        cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
+      }}
+    />
   </HomeStack.Navigator>
 );
 

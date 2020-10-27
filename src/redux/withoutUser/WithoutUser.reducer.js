@@ -1,10 +1,10 @@
-import {ENTER_APP_SUCCESS, TO_LOGOUT_SCEEEN} from './withoutUserActions';
+import {ENTER_APP_SUCCESS, TO_LOGOUT_SCEEEN} from './WithoutUser.actions';
 
 const initialState = {
   enterAppWithoutUser: false,
 };
 
-const withoutUserReducer = (state = initialState, action) => {
+const WithoutUserReducer = (state = initialState, action) => {
   switch (action.type) {
     case ENTER_APP_SUCCESS:
       return {
@@ -21,4 +21,4 @@ const withoutUserReducer = (state = initialState, action) => {
   }
 };
 
-export default withoutUserReducer;
+export default WithoutUserReducer;

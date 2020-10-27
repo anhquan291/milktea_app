@@ -10,9 +10,9 @@ import {useDispatch} from 'react-redux';
 import {firstOpenActions} from '../../redux';
 import {Slides, Pagination} from './components';
 import slides from '../../db/IntroSlides';
-import {WIDTH, HEIGHT} from '../../ultils/constant';
-import Colors from '../../ultils/colors';
-import {MediumText} from '../../components/text';
+import {WIDTH, HEIGHT} from '../../ultils/Constants';
+import Colors from '../../themes/Colors';
+import {MediumText} from '../../components/Text';
 
 const IntroScreen = () => {
   const dispatch = useDispatch();

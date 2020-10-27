@@ -4,7 +4,7 @@ import Animated, {Extrapolate} from 'react-native-reanimated';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Colors from '../../../ultils/colors';
+import Colors from '../../../themes/Colors';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import propTypes from 'prop-types';
 

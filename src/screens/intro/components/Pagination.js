@@ -1,8 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, StyleSheet, Animated} from 'react-native';
-import {WIDTH} from '../../../ultils/constant';
-import Colors from '../../../ultils/colors';
+import {WIDTH} from '../../../ultils/Constants';
+import Colors from '../../../themes/Colors';
 //PropTypes check
 import propTypes from 'prop-types';
 
